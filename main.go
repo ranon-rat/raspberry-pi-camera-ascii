@@ -33,12 +33,12 @@ func openThis(f io.Reader) {
 	//this open the image and print the pixels
 	img, _, _ := image.Decode(f)
 	division := 27
-	limitY,	limitX :=img.Bounds().Max.Y/division,img.Bounds().Max.X/division
+	limitY, limitX := img.Bounds().Max.Y/division, img.Bounds().Max.X/division
 
-	for y := img.Bounds().Min.Y; y < limitY; y++ {
-		for x := img.Bounds().Min.X; x < limitX; x++ {
+	for x := img.Bounds().Min.X; x < limitX; x++ {
+		for y := img.Bounds().Min.Y; y < limitY; y++ {
 			r, g, b, _ := img.At(x*division, y*division).RGBA()
-			fmt.Print(letters[int(((r / 257) + (g / 257) + (b / 257)) / 3) % len(letters)])
+			fmt.Print(letters[int(((r/257)+(g/257)+(b/257))/3)%len(letters)])
 		}
 		fmt.Println()
 
