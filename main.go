@@ -38,7 +38,7 @@ func openThis(f io.Reader) {
 	for y := img.Bounds().Min.Y; y < limitY; y++ {
 		for x := img.Bounds().Min.X; x < limitX; x++ {
 			r, g, b, _ := img.At(x*division, y*division).RGBA()
-			fmt.Print(letters[int(((r / 257) + (g / 257) + (b / 257)) / 3) % len(letters)]+" ")
+			fmt.Print(letters[int(((r / 257) + (g / 257) + (b / 257)) / 3) % len(letters)])
 		}
 		fmt.Println()
 
