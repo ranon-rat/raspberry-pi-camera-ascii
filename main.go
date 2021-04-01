@@ -22,13 +22,7 @@ func addthis() {
 		}
 	}
 }
-func frase(f string) {
-	for _, i := range f {
-		fmt.Print(string(i))
-		time.Sleep(25 * time.Millisecond)
-	}
-	fmt.Println()
-}
+
 func openThis(f io.Reader) {
 	//this open the image and print the pixels
 	img, _, _ := image.Decode(f)
